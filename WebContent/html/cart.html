@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="description" content="ショッピングサイト">
+<title>カート画面 品物を選んでください</title>
+
+</head>
+
+<body>
+<div>
+<header>
+<h1>dマーケット</h1>
+</header>
+<nav>
+</nav>
+<main>
+
+<table border = "1" style="border-collapse: collapse; border-color: green"> 
+
+<tr>
+<th>商品画像</th>
+<td>商品名</td>
+<td width = "100">値段</td>
+<td>個数</td>
+<td width = "100">小計</td>
+
+</tr>
+
+<tr>
+<th><img src="../image/ps5.jpg" alt="PS5" width="400" height="300" ></th>
+<td>PS5(転売不可!)</td>
+<td width = "100">50000円</td>
+<td>
+<section>
+<form id = "form">
+	<select name = "select">
+		<option value = 0>0</option>
+		<option value = 1>1</option>
+		<option value = 2>2</option>
+		<option value = 3>3</option>
+		<option value = 4>4</option>
+	</select>
+</form>
+</section>
+</td>
+<td width = "100">
+	<p id = "shokei" >0円</p>
+</td>
+</tr>
+
+<tr>
+<th><img src="../image/switch.jpg" alt="switch" width="400" height="400"></th>
+<td>Switch(新モデル待ちます)</td>
+
+<td>30000円</td>
+<td>
+<section>
+<form id = "form2">
+	<select name = "select">
+		<option value = 0>0</option>
+		<option value = 1>1</option>
+		<option value = 2>2</option>
+		<option value = 3>3</option>
+		<option value = 4>4</option>
+	</select>
+</form>
+</section>
+</td>
+<td width = "100">
+ <p id = "shokei2" >0円</p>
+ </td>
+</tr>
+
+<tr>
+<th><img src="../image/xbox.jpg" alt="xbox" width="400" height="400"></th>
+<td>Xbox SeriesX(余ってます)</td>
+<td width = "100">30000円</td>
+<td>
+<section>
+<form id = "form3">
+	<select name = "select">
+		<option value = 0>0</option>
+		<option value = 1>1</option>
+		<option value = 2>2</option>
+		<option value = 3>3</option>
+		<option value = 4>4</option>
+	</select>
+</form>
+</section>
+</td>
+<td width = "100">
+	<p id = "shokei3">0円</p>
+</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>合計金額</td>
+<td width = "100">
+	<p id = "gokei">0円</p>
+</td>
+</tr>
+
+</table>
+</main>
+</div>
+
+<p><a href = "../Logout.action">ログアウト</a></p>
+
+<footer>
+<p>Copyright 2021 0618 Java太郎</p>
+</footer>
+
+<script>
+'use strict';
+let ps = 0;
+let swich = 0;
+let xbox = 0;
+let goke = 0;
+document.getElementById('form').select.onchange = function(){
+	ps = document.getElementById('form').select.value * 50000;
+	document.getElementById('shokei').textContent = ps + '円';
+	goke = ps + swich + xbox;
+	document.getElementById('gokei').textContent = goke + '円';
+}
+document.getElementById('form2').select.onchange = function(){
+	swich = document.getElementById('form2').select.value * 30000;
+	document.getElementById('shokei2').textContent = swich + '円';
+	goke = ps + swich + xbox;
+	document.getElementById('gokei').textContent = goke + '円';
+}
+document.getElementById('form3').select.onchange = function(){
+	xbox = document.getElementById('form3').select.value * 30000;
+	document.getElementById('shokei3').textContent = xbox + '円';
+	goke = ps + swich + xbox;
+	document.getElementById('gokei').textContent = goke + '円';
+}
+</script>
+
+</body>
+
+</html>
